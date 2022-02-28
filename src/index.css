@@ -95,3 +95,10 @@ html,
   margin-left: 20%;
   margin-top: 2rem;
 }
+.link {
+  color: white;
+  text-decoration: none;
+}
+.link:hover {
+  color: #7f7d7d;
+}

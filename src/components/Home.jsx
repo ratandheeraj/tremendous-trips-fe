@@ -56,13 +56,13 @@ export default function CityData(){
         <div className='container pb-5'>
             <div className="card w-50 center">
                 <div className="card-body">
-                <form class="form-inline">
+                <form className="form-inline">
                     <div className='row'>
                         <div className="col-10">
-                            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Enter city name"/>
+                            <input type="text" className="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Enter city name"/>
                         </div>
                         <div className="col-2">
-                            <button type="submit" class="btn btn-dark mb-2">Search</button>
+                            <button type="submit" className="btn btn-dark mb-2">Search</button>
                         </div>
                     </div>
                 </form>
@@ -76,7 +76,7 @@ export default function CityData(){
                 <div className="row mb-5">
                     {
                         data?.popularPlaces.map(place =>{
-                            return(<div className="col-4">
+                            return(<div className="col-4" key={place.id}>
                                 <div className="card" style={{width:"22rem"}}>
                                     <img src={Simhachalam} className="card-img-top" alt="..."/>
                                     {/* <img src={ require('../images/simhachalam.jpg') } /> */}
@@ -97,7 +97,7 @@ export default function CityData(){
                 <div className="row">
                 {
                     data?.hotels.map(hotel =>{
-                        return(<div className="col-4">
+                        return(<div className="col-4" key={hotel.id}>
                             <div className="card" style={{width:"22rem"}}>
                                 <img src={Novotel} className="card-img-top" alt="..."/>
                                 {/* <img src={ require('../images/simhachalam.jpg') } /> */}
