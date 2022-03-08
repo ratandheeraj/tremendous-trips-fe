@@ -9,6 +9,8 @@ import {
 import Login from "./components/Login";
 import SignUp from "./components/Signup";
 import Home from './components/Home';
+import AddCity from './components/AddCity';
+import AddPlace from './components/AddPlace';
 function App() {
   return (
     <div>
@@ -20,10 +22,9 @@ function App() {
         
             <div className="collapse navbar-collapse container" id="navbarColor01">
             <ul className="navbar-nav ms-auto">
-                <li className="nav-item pe-2">
-                {/* <a className="nav-link" href="#">Home</a> */}
+                {/* <li className="nav-item pe-2">
                 {<Link to="/" className='link'>Home</Link>}
-                </li>
+                </li> */}
                 <li className="nav-item pe-2">
                 {/* <a className="nav-link" href="#">About</a> */}
                 {<Link to="/login" className='link'>Login</Link>}
@@ -40,6 +41,8 @@ function App() {
         <Route exact path="/signup" element={<SignUp/>}/>
         
         <Route exact path="/login" element={<Login/>}/>
+        <Route exact path="/add-city" element={<AddCity/>}/>
+        <Route exact path="/add-place" element={<AddPlace/>}/>
        
     </Routes>
     {/* <Home/> */}
