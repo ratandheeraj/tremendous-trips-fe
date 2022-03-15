@@ -16,34 +16,12 @@ import Admin from './components/Admin';
 function App() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark ps-4">
-            <a className="navbar-brand" href="#">Tremendous Trips</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-        
-            <div className="collapse navbar-collapse container" id="navbarColor01">
-            <ul className="navbar-nav ms-auto">
-                {/* <li className="nav-item pe-2">
-                {<Link to="/" className='link'>Home</Link>}
-                </li> */}
-                <li className="nav-item pe-2">
-                {/* <a className="nav-link" href="#">About</a> */}
-                {<Link to="/login" className='link'>Login</Link>}
-                </li>
-                <li className="nav-item">
-                {/* <a className="nav-link" href="#">Contact</a> */}
-                {<Link to="/signup" className='link'>Signup</Link>}
-                </li>
-            </ul>
-            </div>
-        </nav>
        <Routes>
-        <Route exact path='/'  element={<Home/>}/>
+        <Route exact path='/home'  element={<Home/>}/>
         <Route exact path="/signup" element={<SignUp/>}/>
         
-        <Route exact path="/login" element={<Login/>}/>
-        {/* <Route exact path="/admin" element={<Admin/>}/> */}
+        <Route exact path="/" element={<Login/>}/>
+        <Route exact path="/admin" element={<Admin/>}/>
         <Route exact path="/add-city" element={<AddCity/>}/>
         <Route exact path="/add-place" element={<AddPlace/>}/>
         <Route exact path="/add-hotel" element={<AddHotel/>}/>

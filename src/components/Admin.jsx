@@ -1,36 +1,55 @@
-import React from 'react';
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Link
-  } from "react-router-dom";
+import React, { useState } from 'react';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Admin(){
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    const navigateTo = useNavigate();
+    const handleSubmit= (e) => {
+        e.preventDefault();
+        // let data = {
+        //     email:email,
+        //     password:password
+        // }
+        // console.log(data);
+        // axios.post(`http://localhost:3301/api/login`, 
+        // data,   
+        // )
+        // .then((response) => {
+            
+        //     console.log(response);
+        //     alert("Login successful");
+        //     navigateTo('/home')
+        // }, (error) => {
+        // console.log(error);
+        // });
+        if(email.trim() == "admin" && password.trim() == "admin123"){
+            alert("Login successful");
+            navigateTo('/add-city');
+        }
+        else{
+            alert("Incorrect credentials");
+        }
+      }
     return(
         <div>
-             <nav className="navbar navbar-expand-lg navbar-dark bg-dark ps-4">
-                <a className="navbar-brand" href="#">Admin Panel</a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-                </button>
-            
-                <div className="collapse navbar-collapse container" id="navbarColor01">
-                <ul className="navbar-nav ms-auto">
-                    {/* <li className="nav-item pe-2">
-                    {<Link to="/" className='link'>Home</Link>}
-                    </li> */}
-                    <li className="nav-item pe-2">
-                    {/* <a className="nav-link" href="#">About</a> */}
-                    {<Link to="/login" className='link'>Login</Link>}
-                    </li>
-                    <li className="nav-item">
-                    {/* <a className="nav-link" href="#">Contact</a> */}
-                    {<Link to="/signup" className='link'>Signup</Link>}
-                    </li>
-                </ul>
-                </div>
-            </nav>
+            <div className='container mt-5 pt-3 w-25'>
+                <form className='form-spl' onSubmit={e => {handleSubmit(e)}}>
+                    <h1 class="h3 mb-3 text-center">Admin Login</h1>
+
+                    <div class="form-floating">
+                    <input type="text" class="form-control mb-2" id="floatingInput" placeholder="name@example.com" onChange={e => setEmail(e.target.value)}/>
+                    <label for="floatingInput">Username</label>
+                    </div>
+                    <div class="form-floating">
+                    <input type="password" class="form-control mb-2" id="floatingPassword" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
+                    <label for="floatingPassword">Password</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-dark mt-1" type="submit">Sign in</button>
+                </form>
+            </div>
         </div>
     )
 }

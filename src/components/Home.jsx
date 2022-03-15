@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Navbar from './Navbar';
 
 export default function CityData(){
     const [data, setData] = useState();
@@ -30,7 +31,9 @@ export default function CityData(){
 
 
     return(
-        <div className='container pb-5'>
+        <div>
+            <Navbar/>
+            <div className='container pb-5'>
             <div className="card w-50 center">
                 <div className="card-body">
                 <form className="form-inline" onSubmit={e => {handleSubmit(e)}}>
@@ -94,6 +97,7 @@ export default function CityData(){
             
         }
             
+        </div>
         </div>
     )
 }

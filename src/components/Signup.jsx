@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Navbar from './Navbar';
 function SignUp(){
     const [name, setName] = useState();
     const [email, setEmail] = useState();
@@ -16,13 +17,15 @@ function SignUp(){
         axios.post(`http://localhost:3301/api/user`, data)
         .then((response) => {
             alert("User created successfully");
-            navigateTo('/login')
+            navigateTo('/')
         }, (error) => {
         console.log(error);
         });
       }
     return(
-        <div className='container mt-5 pt-3 w-25'>
+       <div>
+           <Navbar/>
+            <div className='container mt-5 pt-3 w-25'>
             <form className='form-spl' onSubmit={e => {handleSubmit(e)}}>
             <h1 className="h3 mb-3 text-center">SignUp</h1>
             <div className="form-floating">
@@ -40,6 +43,7 @@ function SignUp(){
             <button className="w-100 btn btn-lg btn-dark mt-1" type="submit">Sign in</button>
         </form>
     </div>
+       </div>
     );
 }
 

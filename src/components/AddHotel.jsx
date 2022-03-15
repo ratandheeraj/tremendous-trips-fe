@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Select from 'react-select';
+import AdminNav from './AdminNav';
 function AddHotel(){
     const [cities, setCities] = useState();
     const [citiesArray, setCitiesArray] = useState();
@@ -48,7 +49,9 @@ function AddHotel(){
         });
       }
     return(
-        <div className='container mt-5 pt-3 w-25'>
+      <div>
+          <AdminNav/>
+            <div className='container mt-5 pt-3 w-25'>
             <form className='form-spl' onSubmit={e => {handleSubmit(e)}}>
             <h1 className="h3 mb-3 text-center">Add Hotel</h1>
             <div className="form-floating">
@@ -69,6 +72,7 @@ function AddHotel(){
             <button className="w-100 btn btn-lg btn-dark mt-1" type="submit">Create Hotel</button>
         </form>
     </div>
+      </div>
     );
 }
 
