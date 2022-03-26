@@ -21,7 +21,7 @@ export default function Navbar(){
                     {<Link to="/admin" className='link'>Admin</Link>}
                     </li>
                     <li className="nav-item pe-2">
-                    {<Link to="/" className='link'>Login</Link>}
+                    {<Link to="/login" className='link'>Login</Link>}
                     </li>
                     <li className="nav-item">
                     {<Link to="/signup" className='link'>Signup</Link>}

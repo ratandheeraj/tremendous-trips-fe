@@ -27,7 +27,7 @@ export default function AdminNav(){
                     {<Link to="/add-hotel" className='link'>Add Hotel</Link>}
                     </li>
                     <li className="nav-item">
-                    {<Link to="/" className='link'>Logout</Link>}
+                    {<Link to="/login" className='link'>Logout</Link>}
                     </li>
                 </ul>
                 </div>
